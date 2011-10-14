@@ -2,7 +2,6 @@
 SCRIPT_PATH="`dirname $0`"
 SCRIPT_LOGFILE="${SCRIPT_PATH}/git.log"
 
-echo `dirname $0`
 cd ${SCRIPT_PATH}
 res=`git status|grep "nothing to commit"`
 if [[ "$res" == "" ]]; then
