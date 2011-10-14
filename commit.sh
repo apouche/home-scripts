@@ -13,4 +13,3 @@ if [[ "$res" == "" ]]; then
 	echo "---------------------------------------"   >>${SCRIPT_LOGFILE} 2>&1
 	echo "" >>${SCRIPT_LOGFILE} 2>&1
 fi
-
