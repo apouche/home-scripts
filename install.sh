@@ -13,3 +13,4 @@ do
 	fi
 	ln -s "${SCRIPT_PATH}/${GLOBAL_FILES_NAME}/$file" ~/$file
 done
+

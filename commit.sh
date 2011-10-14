@@ -11,6 +11,6 @@ if [[ "$res" == "" ]]; then
 	git commit -a -m "modifications made" >>${SCRIPT_LOGFILE} 2>&1
 	git push >>${SCRIPT_LOGFILE} 2>&1
 	echo "---------------------------------------"   >>${SCRIPT_LOGFILE} 2>&1
-	echo ""  2>&1
+	echo "" >>${SCRIPT_LOGFILE} 2>&1
 fi
 
