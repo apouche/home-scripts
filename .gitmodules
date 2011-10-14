@@ -1,0 +1,12 @@
+[submodule "folders/.vim/FuzzyFinder.git"]
+	path = folders/.vim/FuzzyFinder.git
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "folders/.vim/L9.git"]
+	path = folders/.vim/L9.git
+	url = https://github.com/vim-scripts/L9.git
+[submodule "folders/.vim/bufexplorer.zip.git"]
+	path = folders/.vim/bufexplorer.zip.git
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "folders/.vim/ShowMarks.git"]
+	path = folders/.vim/ShowMarks.git
+	url = https://github.com/vim-scripts/ShowMarks.git

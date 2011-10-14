@@ -9,7 +9,7 @@ do
 	res=`find  ~ -name "${file}" -maxdepth 1`
 	if [[ "$res" != "" ]]; then
 		echo "backing up $res into ${res}.mine"
-		mv "$res" "${res}.mine"
+		mv -n "$res" "${res}.mine"
 	fi
 	ln -s "${SCRIPT_PATH}/${GLOBAL_FILES_NAME}/$file" ~/$file
 done
