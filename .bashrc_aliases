@@ -1,0 +1,20 @@
+#Shortcuts
+alias prj="cd /Volumes/Storage/Projects"
+alias sns="cd /Volumes/Storage/Projects/Smart\&Soft"
+alias tmp="cd /Volumes/Storage/Projects/tmp"
+alias prf="cd ~/Library/Preferences"
+alias drp="cd /Volumes/Storage/Dropbox"
+alias snsf="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSFramework"
+alias snst="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSiPhoneTemplate"
+alias snsc="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSScripts"
+
+#Network
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myips="myip;ips"
+
+
+# Commands
+alias open="open -a 'Path Finder'"
+alias cdp='cd "`pbpaste`"'
+alias pwdp='pwd|pbcopy'
