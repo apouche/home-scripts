@@ -1,12 +1,15 @@
-[submodule "folders/.vim/FuzzyFinder.git"]
-	path = folders/.vim/FuzzyFinder.git
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "folders/.vim/L9.git"]
-	path = folders/.vim/L9.git
+[submodule "folders/.vim/bundle/L9"]
+	path = folders/.vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
-[submodule "folders/.vim/bufexplorer.zip.git"]
-	path = folders/.vim/bufexplorer.zip.git
-	url = https://github.com/vim-scripts/bufexplorer.zip.git
-[submodule "folders/.vim/ShowMarks.git"]
-	path = folders/.vim/ShowMarks.git
+[submodule "folders/.vim/bundle/ShowMarks"]
+	path = folders/.vim/bundle/ShowMarks
 	url = https://github.com/vim-scripts/ShowMarks.git
+[submodule "folders/.vim/bundle/bufexplorer"]
+	path = folders/.vim/bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "folders/.vim/bundle/FuzzyFinder"]
+	path = folders/.vim/bundle/FuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "folders/.vim/bundle/cocoa.vim"]
+	path = folders/.vim/bundle/cocoa.vim
+	url = https://github.com/vim-scripts/cocoa.vim.git
