@@ -7,6 +7,7 @@ alias drp="cd /Volumes/Storage/Dropbox"
 alias snsf="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSFramework"
 alias snst="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSiPhoneTemplate"
 alias snsc="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSScripts"
+alias snsmetro="cd /Volumes/Storage/Projects/Smart\&Soft/Metro/trunk/Metro-iPad/MetroFrance"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
