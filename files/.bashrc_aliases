@@ -29,15 +29,16 @@ tail-sns ()
 	tail -F $1 | awk -v VAR=$2 '
 	{
 		col=""
+		res="\033[39m"
 		if ( $0 ~ /\{DBG/ )
 		{ 
 			col="\033[0;32m"
-			$0 = "\033[0;32m$0\033[39m"
-	   	}
+			$0 = sprintf("%s%s%s",col,$0,res)
+		}
 		else if ( $0 ~ /\{INF/ )
 	   	{ 
 			col="\033[1;33m"
-			$0 = sprintf("%s%s",$col,$0)
+			$0 = sprintf("%s%s%s",col,$0,res)
 	   	}
 		#else
 		#	print $0
@@ -45,7 +46,8 @@ tail-sns ()
 		if ( $0 ~ VAR )
 		{
 		   	l=$0
-			sub(VAR, "\033[0;31m&\033", $l) 
+			sub(VAR, "\033[0;31m&"col, $l)
+			$0 = $l 
 		} 
 
 		print $0
