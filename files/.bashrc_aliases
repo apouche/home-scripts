@@ -26,9 +26,9 @@ alias pwdp='pwd|pbcopy'
 #########################################
 tail-sns ()
 {
-	tail -F $1 | awk '
+	tail -F $1 | awk -v VAR=$2 '
 	{
-		if ( $0 ~ /(App)/ ) { sub(/App/, "\033[0;31mApp\033[39m", $0) } 
+		if ( $0 ~ VAR ) { sub(VAR, "\033[0;31m&\033[39m", $0) } 
 		if ( $0 ~ /\{DBG/ ) { print "\033[0;32m" $0 "\033[39m" }
 		else if ( $0 ~ /\{INF/ ) { print "\033[1;33m" $0 "\033[39m" }
 		else
