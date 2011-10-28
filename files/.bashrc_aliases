@@ -26,11 +26,11 @@ alias pwdp='pwd|pbcopy'
 #########################################
 tail-sns ()
 {
-	tail -f $1 | awk '
+	tail -F $1 | awk '
 	{
 		#if ( $0 ~ /(App)/ ) { print gensub(/App/, "\\1", "g", $1) } 
-		if ( $0 ~ /\{DBG/ ) { print "\033[0;37m" $0 "\033[39m" }
-		else if ( $0 ~ /\{INF/ ) { print "\033[1;32m" $0 "\033[39m" }
+		if ( $0 ~ /\{DBG/ ) { print "\033[0;32m" $0 "\033[39m" }
+		else if ( $0 ~ /\{INF/ ) { print "\033[1;33m" $0 "\033[39m" }
 		else
 			print $0
 	}'
