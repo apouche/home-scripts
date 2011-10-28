@@ -19,3 +19,16 @@ alias myips="myip;ips"
 alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
+
+
+#########################################
+# Functions
+#########################################
+tail-sns ()
+{
+	tail -f $1 | awk -v HI=$2 '
+	/\{DBG/ {print "\033[32m" $0 "\033[39m"} 
+	/\{INF/ {print "\033[33m" $0 "\033[39m"}
+	/$HI/   {print "\033[31m" $0 "\033[39m"}
+	'
+}
