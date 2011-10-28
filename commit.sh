@@ -3,7 +3,6 @@ SCRIPT_PATH="`dirname $0`"
 SCRIPT_LOGFILE="${SCRIPT_PATH}/git.log"
 
 cd ${SCRIPT_PATH}
-ssh-agent
 res=`git status|grep "nothing to commit"`
 if [[ "$res" == "" ]]; then
 	echo "---------------------------------------"  >>${SCRIPT_LOGFILE} 2>&1
