@@ -20,7 +20,6 @@ alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 
-
 #########################################
 # Functions
 #########################################
