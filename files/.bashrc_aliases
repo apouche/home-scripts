@@ -24,6 +24,8 @@ alias pwdp='pwd|pbcopy'
 # Functions
 #########################################
 
+
+
 tail-sns ()
 {
 	tail -F $1 | awk -v VAR=$2 '
