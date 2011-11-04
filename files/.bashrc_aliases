@@ -3,11 +3,11 @@
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
 
-if [ -d "${SNS_PATH}/trunk/SnSScripts" ]; 
+if [ -d "${SNS_PATH}/trunk/SnSScripts/" ]; 
 then
 	export PATH=:${SNS_PATH}/trunk/SnSScripts:$PATH  
 else
-	echo 'tt'
+	echo "${SNS_PATH}/trunk/SnSScripts"
 fi
 
 #########################################
