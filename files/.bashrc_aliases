@@ -3,12 +3,12 @@
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
 
-if [ -d "${SNS_PATH}/trunk/SnSScripts/" ]; 
-then
-	export PATH=:${SNS_PATH}/trunk/SnSScripts:$PATH  
-else
-	echo "${SNS_PATH}/trunk/SnSScripts"
-fi
+#if [ -d "${SNS_PATH}/trunk/SnSScripts/" ]; 
+#then
+	export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
+#else
+#	echo "${SNS_PATH}/trunk/SnSScripts"
+#fi
 
 #########################################
 # Aliases
