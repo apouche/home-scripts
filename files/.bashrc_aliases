@@ -1,11 +1,15 @@
 #########################################
+# Variables
+#########################################
+SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
+
+#########################################
 # Aliases
 #########################################
 
-
 #Shortcuts
 alias prj="cd /Volumes/Storage/Projects"
-alias sns="cd /Volumes/Storage/Projects/Smart\&Soft"
+alias sns="cd ${SNS_PATH}"
 alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
 alias drp="cd /Volumes/Storage/Dropbox"
