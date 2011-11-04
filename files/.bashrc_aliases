@@ -3,7 +3,7 @@
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
 
-export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
+#export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
 
 #########################################
 # Aliases
