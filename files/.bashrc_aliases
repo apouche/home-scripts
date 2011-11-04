@@ -9,14 +9,15 @@ SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
 
 #Shortcuts
 alias prj="cd /Volumes/Storage/Projects"
-alias sns="cd ${SNS_PATH}"
 alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
 alias drp="cd /Volumes/Storage/Dropbox"
-alias snsf="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSFramework"
-alias snst="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSiPhoneTemplate"
-alias snsc="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSScripts"
-alias snsmetro="cd /Volumes/Storage/Projects/Smart\&Soft/Metro/trunk/Metro-iPad/MetroFrance"
+
+alias sns="cd ${SNS_PATH}"
+alias snsf="cd ${SNS_PATH}/trunk/SnSFramework"
+alias snst="cd ${SNS_PATH}/trunk/SnSiPhoneTemplate"
+alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
+alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
