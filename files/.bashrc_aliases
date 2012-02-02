@@ -21,6 +21,7 @@ alias snst="cd ${SNS_PATH}/trunk/SnSiPhoneTemplate"
 alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
 alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
 alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
+alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
