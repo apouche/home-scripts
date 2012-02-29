@@ -16,7 +16,7 @@ alias prf="cd ~/Library/Preferences"
 alias drp="cd /Volumes/Storage/Dropbox"
 
 alias sns="cd ${SNS_PATH}"
-alias snsf="cd ${SNS_PATH}/trunk/SnSFramework"
+alias snsf="cd ${SNS_PATH}/../ios4me"
 alias snst="cd ${SNS_PATH}/trunk/SnSiPhoneTemplate"
 alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
 alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
