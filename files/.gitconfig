@@ -3,7 +3,7 @@
 	email = johan.attali@gmail.com
 [github]
 	user = apouche
-	token = 40ae9be537e52a0f6fed63e5c38489ec
+	token = ---
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
