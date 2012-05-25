@@ -17,12 +17,13 @@ alias drp="cd /Volumes/Storage/Dropbox"
 
 alias sns="cd ${SNS_PATH}"
 alias snsf="cd ${SNS_PATH}/../ios4me"
-alias snst="cd ${SNS_PATH}/trunk/SnSiPhoneTemplate"
+alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
 alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
 alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
 alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
 alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
 alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
+alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
@@ -31,7 +32,7 @@ alias myips="myip;ips"
 
 
 # Commands
-alias open="open -a 'Path Finder'"
+#alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 
@@ -39,6 +40,17 @@ alias pwdp='pwd|pbcopy'
 # Functions
 #########################################
 
+sns-mate-shortcuts ()
+{
+	# ^\s?[^\s]+\s([a-z]+)_?
+	# @synthesize $1 = $1_
+	# 
+	# ^\s?[^\s]+\s([a-z]+)_?;
+	# #define kItemKey$1 @"$1"
+	# 
+	# ^\s?[^\s]+\s([a-z]+)_?
+	# self.$1 = nil
+}
 
 tail-sns ()
 {
