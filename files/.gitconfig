@@ -1,5 +1,4 @@
 [user]
-	name = Johan Attali
 	email = johan.attali@gmail.com
 [github]
 	user = apouche
@@ -17,7 +16,7 @@
     gr = grep --full-name -n
     k = !gitk
     lc = log --pretty=oneline --decorate=full --stat --no-merges ORIG_HEAD..
-    lg = log -p
+	lg = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     logp = log --pretty=oneline --decorate=full -20
     post-review = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.software.review@news.intersec.com -C -C -M
     post-review-test = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.test@news.intersec.com -C -C -M
@@ -34,7 +33,7 @@
 [color "status"]
     header = bold blue
     added = bold green
-    changed = bold red
+    changed = bold cyan
     untracked = bold yellow
 [color "diff"]
     meta = yellow bold
