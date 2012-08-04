@@ -2,6 +2,7 @@
 # Variables
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
+PRJ_PATH="/Volumes/Storage/Projects"
 
 #export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
 
@@ -24,8 +25,9 @@ alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
 alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
 alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
 alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
-#alias snsrms="cd ${SNS_PATH}/GymGlish/trunk/RichMorningShow-iPad"
 alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
+alias qt="cd ${PRJ_PATH}/gitorious/"
+alias bina="cd ${PRJ_PATH}/github/bina"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
@@ -33,7 +35,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias myips="myip;ips"
 
 # Commands
-#alias open="open -a 'Path Finder'"
+alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 alias pcat='pygmentize -g'
@@ -43,7 +45,6 @@ alias pcat='pygmentize -g'
 
 sns-shortucts ()
 {
-	echo "t"
 	# ^\s*([^_]+)_
 	# @property (nonatomic, retain) $1
 	#

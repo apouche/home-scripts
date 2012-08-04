@@ -13,6 +13,7 @@ call pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set history=400
+set directory=.,$TEMP
 
 "if has('mouse')
 "	"set mouse=a
