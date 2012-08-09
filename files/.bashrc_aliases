@@ -1,29 +1,65 @@
+#########################################
+# Variables
+#########################################
+SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
+PRJ_PATH="/Volumes/Storage/Projects"
+
+#export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
+
+#########################################
+# Aliases
+#########################################
+
 #Shortcuts
 alias prj="cd /Volumes/Storage/Projects"
-alias sns="cd /Volumes/Storage/Projects/Smart\&Soft"
 alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
 alias drp="cd /Volumes/Storage/Dropbox"
-alias snsf="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSFramework"
-alias snst="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSiPhoneTemplate"
-alias snsc="cd /Volumes/Storage/Projects/Smart\&Soft/trunk/SnSScripts"
-alias snsmetro="cd /Volumes/Storage/Projects/Smart\&Soft/Metro/trunk/Metro-iPad/MetroFrance"
+
+alias sns="cd ${SNS_PATH}"
+alias snsf="cd ${SNS_PATH}/../ios4me"
+alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
+alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
+alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
+alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
+alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
+alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
+alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
+alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
+alias qt="cd ${PRJ_PATH}/gitorious/"
+alias bina="cd ${PRJ_PATH}/github/bina"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias myips="myip;ips"
 
-
 # Commands
 alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
-
+alias pcat='pygmentize -g'
 #########################################
 # Functions
 #########################################
 
+sns-shortucts ()
+{
+	# ^\s*([^_]+)_
+	# @property (nonatomic, retain) $1
+	#
+	# ^\s?[^\s]+\s([a-z]+)_?
+	# @synthesize $1 = $1_
+	# 
+	# ^\s?[^\s]+\s([a-z]+)_?;
+	# #define kItemKey$1 @"$1"
+	# 
+	# ^\s?[^\s]+\s([a-z]+)_?
+	# self.$1 = nil
+	#
+	#^\s?[^\s]+\s([a-z]+)_?
+	#$1_ = [[NSString alloc] initWithDictionary:iDic key:kSellerKey$1]
+}
 
 tail-sns ()
 {
@@ -61,4 +97,9 @@ tail-sns ()
 
 		print $0
 	}'
+}
+
+unretin ()
+{
+	find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
 }
