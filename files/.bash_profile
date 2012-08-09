@@ -72,3 +72,12 @@ echo -ne "\\033[34mServer time is: "; date
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+##
+# Your previous /Users/johan/.bash_profile file was backed up as /Users/johan/.bash_profile.macports-saved_2012-07-26_at_22:29:36
+##
+
+# MacPorts Installer addition on 2012-07-26_at_22:29:36: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
