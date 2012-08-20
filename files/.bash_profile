@@ -39,6 +39,7 @@ echo -e "\\033[34m`bash --version`"
 #echo -ne "${COLOR_GRAY}Uptime: "; uptime
 echo -ne "\\033[34mUptime: "; uptime
 echo -ne "\\033[34mServer time is: "; date
+echo -ne "\\033[0m"
 
 
 
