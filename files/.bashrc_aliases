@@ -85,3 +85,8 @@ unretin ()
 {
 	find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
 }
+
+sublime ()
+{
+	open -a "Sublime Text 2" $@
+}
