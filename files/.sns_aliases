@@ -1,0 +1,69 @@
+alias sns="cd ${SNS_PATH}"
+alias snsf="cd ${SNS_PATH}/../ios4me"
+alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
+alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
+alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
+alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
+alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
+alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
+alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
+alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
+
+tail-sns ()
+{
+  tail -F $1 | awk -v VAR=$2 '
+  {
+    col=""
+    res="\033[39m"
+    if ( $0 ~ /\{DBG/ )
+    { 
+      col="\033[0;32m"
+      $0 = sprintf("%s%s%s",col,$0,res)
+    }
+    else if ( $0 ~ /\{INF/ )
+      { 
+      col="\033[1;33m"
+      $0 = sprintf("%s%s%s",col,$0,res)
+      }
+    else if ( $0 ~ /\{WRN/ )
+      { 
+      col="\033[1;35m"
+      $0 = sprintf("%s%s%s",col,$0,res)
+      }
+    else if ( $0 ~ /\{ERR/ )
+      { 
+      col="\033[1;31m"
+      $0 = sprintf("%s%s%s",col,$0,res)
+      }
+
+    if ( $0 ~ VAR )
+    {
+        line=$0
+      sub(VAR, "\033[0;36m&"col, line)
+      $0 = line 
+    } 
+
+    print $0
+  }'
+}
+
+rms-java-parser ()
+{
+  ori=`pwd`
+  rmsparser="/Volumes/Storage/Projects/Smart&Soft/GymGlish/trunk/RichMorningShow-android/libs"
+  cd $rmsparser;
+  rm -rf output
+  mkdir output
+  cp -r org output/
+
+  echo "Compiling..."
+  javac -classpath .:jackson-mapper-asl-1.9.1.jar:jackson-core-asl-1.9.1.jar:jaxen-1.1.3.jar:jdom-2.0.2.jar -d output/ ../src/scripts/VocabularyParser.java ../src/com/gymglish/rms/bo/Vocabulary.java ../src/com/gymglish/rms/bo/Helper.java ../src/scripts/Getopt.java ../src/scripts/LongOpt.java
+  cd output
+  echo "Creating Jar File..."
+  echo "Main-Class: scripts.VocabularyParser" >manifest.xml
+  jar cfm rms.jar manifest.xml `find . -name "*.class"`
+  echo "Running Program..."
+  cd $ori
+  java -Dfile.encoding=UTF8 -jar "$rmsparser/output/rms.jar" $@
+}
+

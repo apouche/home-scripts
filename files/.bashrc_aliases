@@ -1,3 +1,7 @@
+if [ -f ~/.sns_aliases ]; then
+    . ~/.sns_aliases
+fi
+
 #########################################
 # Variables
 #########################################
@@ -16,16 +20,6 @@ alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
 alias drp="cd /Volumes/Storage/Dropbox"
 
-alias sns="cd ${SNS_PATH}"
-alias snsf="cd ${SNS_PATH}/../ios4me"
-alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
-alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
-alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
-alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
-alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
-alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
-alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
-alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
 alias qt="cd ${PRJ_PATH}/gitorious/"
 alias bina="cd ${PRJ_PATH}/github/bina"
 
@@ -42,45 +36,6 @@ alias pcat='pygmentize -g'
 #########################################
 # Functions
 #########################################
-
-tail-sns ()
-{
-	tail -F $1 | awk -v VAR=$2 '
-	{
-		col=""
-		res="\033[39m"
-		if ( $0 ~ /\{DBG/ )
-		{ 
-			col="\033[0;32m"
-			$0 = sprintf("%s%s%s",col,$0,res)
-		}
-		else if ( $0 ~ /\{INF/ )
-	   	{ 
-			col="\033[1;33m"
-			$0 = sprintf("%s%s%s",col,$0,res)
-	   	}
-		else if ( $0 ~ /\{WRN/ )
-	   	{ 
-			col="\033[1;35m"
-			$0 = sprintf("%s%s%s",col,$0,res)
-	   	}
-		else if ( $0 ~ /\{ERR/ )
-	   	{ 
-			col="\033[1;31m"
-			$0 = sprintf("%s%s%s",col,$0,res)
-	   	}
-
-		if ( $0 ~ VAR )
-		{
-		   	line=$0
-			sub(VAR, "\033[0;36m&"col, line)
-			$0 = line 
-		} 
-
-		print $0
-	}'
-}
-
 unretin ()
 {
 	find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
