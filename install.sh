@@ -1,17 +1,28 @@
 #! /bin/bash
 SCRIPT_PATH="$PWD/`dirname $0`"
 GLOBAL_FILES_NAME="files"
-GLOBAL_FILES=`find ${SCRIPT_PATH}/${GLOBAL_FILES_NAME} -type f|grep -oE "[^/]+$"|tr '\n' ' '`
-#GLOBAL_FILES=`find ${SCRIPT_PATH} ! \( -regex ".*/\.git.*" \) -type f |grep -oP "[^/]+$"|tr '\n' ' '`
+GLOBAL_FOLDERS_NAME="folders"
 
-echo ${SCRIPT_PATH}
-for file in ${GLOBAL_FILES}
+GLOBAL_FILES=`find ${SCRIPT_PATH}/${GLOBAL_FILES_NAME} -type f|grep -oE "[^/]+$"|tr '\n' ' '`
+GLOBAL_FOLDERS=`find ${SCRIPT_PATH}/${GLOBAL_FOLDERS_NAME} -type d -maxdepth 1 -mindepth 1|grep -oE "[^/]+$"|tr '\n' ' '`
+
+ALL_FILES="${GLOBAL_FILES} ${GLOBAL_FOLDERS}"
+
+for file in ${ALL_FILES}
 do
 	res=`find  ~ -name "${file}" -maxdepth 1`
 	if [[ "$res" != "" ]]; then
 		echo "backing up $res into ${res}.mine"
 		mv -n "$res" "${res}.mine"
 	fi
-	ln -s "${SCRIPT_PATH}/${GLOBAL_FILES_NAME}/$file" ~/$file
+
+  isFolder=`echo "$GLOBAL_FOLDERS"|grep "$file"`
+  if [[ "$isFolder" != "" ]]; then 
+    folder=${GLOBAL_FOLDERS_NAME}
+  else
+    folder=${GLOBAL_FILES_NAME}
+  fi
+  
+	ln -sf "${SCRIPT_PATH}/${folder}/$file" ~/$file
 done
 

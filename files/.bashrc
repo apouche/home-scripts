@@ -39,7 +39,6 @@ alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
 
 # History ----------------------------------------------------------
 export HISTCONTROL=ignoredups
-#export HISTCONTROL=erasedups
 export HISTFILESIZE=3000
 export HISTIGNORE="ls:cd:[bf]g:exit:..:...:ll:lla"
 alias h=history
@@ -60,14 +59,12 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# Use vi command mode
-#bind "set editing-mode vi"
-#set -o vi
-#bind -m vi-command -r 'v'
+# External Aliases ----------------------------------------------------------
 
-# Touch aliases file if existing
-if [ -f ~/.bashrc_aliases ]; then
-    . ~/.bashrc_aliases
+if [[ -d ~/.aliases ]]; then
+    for f in ~/.aliases/*; do
+      . $f
+  done
 fi
 
 
@@ -127,18 +124,6 @@ alias v=vim
 
 
 
-# Security ---------------------------------------------------------
-
-# Folder shared by a group
-# chmod g+s directory 
-#find /foo -type f -print | xargs chmod g+rw,o-rwx,u+rw
-#find /foo -type d -print | xargs chmod g+rwxs,o-rwx,u+rwx
-
-# this might work just the same (not tested)
-# chmod -R g+rwXs,o-rwx,u+rwX /foo
-
-
-
 # Other aliases ----------------------------------------------------
 alias ll='ls -hl'
 alias la='ls -a'
@@ -172,26 +157,3 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 alias untar="tar xvzf"
 
 alias cp_folder="cp -Rpv" #copies folder and all sub files and folders, preserving security and dates
-
-
-
-# Bring in the other files ----------------------------------------------------
-#source ~/.bashrc_help
-#source ~/.bashrc_app_specific
-
-
-
-# Test ------------------------------------------------------------------------ 
-
-#if [ "$OS" = "linux" ] ; then
-#elif
-#else
-#fi
-
-#if [ -z "$PS1" ]; then
-  #echo 'non-interactive shell'
-  ### non-interactive shells (only)
-#else
-  #echo 'interactive shell'
-  ### interactive shells (only)
-#fi

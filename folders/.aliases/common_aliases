@@ -1,7 +1,3 @@
-if [ -f ~/.sns_aliases ]; then
-    . ~/.sns_aliases
-fi
-
 #########################################
 # Variables
 #########################################
@@ -31,15 +27,16 @@ alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 alias pcat='pygmentize -g'
+
 #########################################
 # Functions
 #########################################
-unretin ()
+unretiner ()
 {
-	find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
+  find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
 }
 
 sublime ()
 {
-	open -a "Sublime Text 2" $@
+  open -a "Sublime Text 2" $@
 }

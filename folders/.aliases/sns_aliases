@@ -1,3 +1,9 @@
+#########################################
+# Variables
+#########################################
+SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
+#export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
+
 alias sns="cd ${SNS_PATH}"
 alias snsf="cd ${SNS_PATH}/../ios4me"
 alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
@@ -8,6 +14,10 @@ alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
 alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
 alias snspv="cd ${SNS_PATH}/ParuVendu/trunk/ParuVendu-iPhone/"
 alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
+
+#########################################
+# Functions
+#########################################
 
 tail-sns ()
 {
