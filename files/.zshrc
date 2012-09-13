@@ -89,7 +89,9 @@ export RI="--format ansi"
 declare -U path
 
 #export LANG=en_US
-export PAGER=most
+if [[ -x `which most` ]]; then
+  export PAGER=most
+fi
 
 # --------------------------------------
 # External Files
