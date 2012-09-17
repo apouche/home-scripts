@@ -335,8 +335,8 @@ bindkey -M viins ' ' magic-space
 HISTFILE=~/.history
 
 # Remember about a years worth of history (AWESOME)
-SAVEHIST=10000
-HISTSIZE=10000
+SAVEHIST=20000
+HISTSIZE=20000
 
 # Don't overwrite, append!
 setopt APPEND_HISTORY
