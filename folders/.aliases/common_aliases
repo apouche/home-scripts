@@ -21,6 +21,7 @@ PRJ_PATH="/Volumes/Storage/Projects"
 #########################################
 
 #Shortcuts
+alias hs="cd ~/.home-scripts"
 alias prj="cd /Volumes/Storage/Projects"
 alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
