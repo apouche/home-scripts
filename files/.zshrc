@@ -373,6 +373,7 @@ setopt HIST_FIND_NO_DUPS
 # --------------------------------------
 # Prompt
 # --------------------------------------
+setopt PROMPT_SUBST
 
 host_color=cyan
 history_color=yellow
@@ -407,7 +408,7 @@ case "$TERM" in
     directory_prompt=""
   ;;
   (*)
-    directory_prompt="%{$fg[$directory_color]%}%c%{$reset_color%}"
+    directory_prompt="%{$fg[$directory_color]%}%C%{$reset_color%}"
   ;;
 esac
 
