@@ -39,7 +39,7 @@ alias myips="myip;ips"
 alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
-alias pcat='pygmentize -g'
+alias pcat='pygmentize -f terminal256 -O style=solarized'
 
 #########################################
 # Functions
