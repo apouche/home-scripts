@@ -1,5 +1,6 @@
 [user]
 	email = johan.attali@gmail.com
+	name = apouche
 [github]
 	user = apouche
 	token = ---
@@ -16,8 +17,8 @@
     gr = grep --full-name -n
     k = !gitk
     lc = log --pretty=oneline --decorate=full --stat --no-merges ORIG_HEAD..
-	lg = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    logp = log --pretty=oneline --decorate=full -20
+	lg = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	logp = log --pretty=oneline --decorate=full -20
     post-review = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.software.review@news.intersec.com -C -C -M
     post-review-test = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.test@news.intersec.com -C -C -M
     st = status
