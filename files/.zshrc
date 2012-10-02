@@ -18,6 +18,9 @@ zsh-mime-setup
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
+# allows for complex for loop >> "for package in /home/us?r/**/*os"; do; done
+setopt EXTENDED_GLOB
+
 # Now we can pipe to multiple outputs!
 setopt MULTIOS
 
@@ -78,6 +81,115 @@ setopt EXTENDED_GLOB
 
 # hows about arrays be awesome?  (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
 setopt RC_EXPAND_PARAM
+
+# --------------------------------------
+# GIT
+# --------------------------------------
+
+# get the name of the branch we are on
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_POST_BRANCH$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+
+
+# Checks if working tree is dirty
+parse_git_dirty() {
+  local SUBMODULE_SYNTAX=''
+  if [[ $POST_1_7_2_GIT -gt 0 ]]; then
+        SUBMODULE_SYNTAX="--ignore-submodules=dirty"
+  fi
+  if [[ -n $(git status -s ${SUBMODULE_SYNTAX}  2> /dev/null) ]]; then
+    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+  else
+    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+  fi
+}
+
+
+# Checks if there are commits ahead from remote
+function git_prompt_ahead() {
+  if $(echo "$(git log origin/$(current_branch)..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
+    echo "$ZSH_THEME_GIT_PROMPT_AHEAD"
+  fi
+}
+
+# Formats prompt string for current git commit short SHA
+function git_prompt_short_sha() {
+  SHA=$(git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+}
+
+# Formats prompt string for current git commit long SHA
+function git_prompt_long_sha() {
+  SHA=$(git rev-parse HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+}
+
+# Get the status of the working tree
+git_prompt_status() {
+  INDEX=$(git status --porcelain 2> /dev/null)
+  STATUS=""
+  if $(echo "$INDEX" | grep '^?? ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_UNTRACKED$STATUS"
+  fi
+  if $(echo "$INDEX" | grep '^A  ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
+  elif $(echo "$INDEX" | grep '^M  ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
+  fi
+  if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+  elif $(echo "$INDEX" | grep '^AM ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+  elif $(echo "$INDEX" | grep '^ T ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+  fi
+  if $(echo "$INDEX" | grep '^R  ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_RENAMED$STATUS"
+  fi
+  if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
+  elif $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
+  fi
+  if $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
+    STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED$STATUS"
+  fi
+  echo $STATUS
+}
+
+#compare the provided version of git to the version installed and on path
+#prints 1 if input version <= installed version
+#prints -1 otherwise 
+function git_compare_version() {
+  local INPUT_GIT_VERSION=$1;
+  local INSTALLED_GIT_VERSION
+  INPUT_GIT_VERSION=(${(s/./)INPUT_GIT_VERSION});
+  INSTALLED_GIT_VERSION=($(git --version));
+  INSTALLED_GIT_VERSION=(${(s/./)INSTALLED_GIT_VERSION[3]});
+
+  for i in {1..3}; do
+    if [[ $INSTALLED_GIT_VERSION[$i] -lt $INPUT_GIT_VERSION[$i] ]]; then
+      echo -1
+      return 0
+    fi
+  done
+  echo 1
+}
+
+#this is unlikely to change so make it all statically assigned
+POST_1_7_2_GIT=$(git_compare_version "1.7.2")
+
+# ZSH_THEME_GIT_PROMPT_PREFIX="$fg_bold[green] ["
+# ZSH_THEME_GIT_PROMPT_SUFFIX=" ] "
+# ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
+# ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
+
+# git theming
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}%{$fg_no_bold[yellow]%}%B"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[cyan]%}%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
+ZSH_THEME_GIT_PROMPT_POST_BRANCH="%{$reset_color%}:"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✗"
 
 # --------------------------------------
 # Variables
@@ -419,7 +531,11 @@ else
 fi
 
 #PS1="${host_prompt} ${jobs_total}${history_total} ${directory_prompt}${error_total}${post_prompt} "
-PS1="${host_prompt}:${directory_prompt}${post_prompt} "
+PS1="${host_prompt}:${directory_prompt}$(git_prompt_info)${post_prompt} "
+PROMPT='%{$fg[cyan]%}%B%n%b%{$reset_color%}:%{$fg[blue]%}%B%C%b%{$reset_color%} $(git_prompt_info)%{$fg[cyan]%}%(!.#.>)%{$reset_color%} '
+RPROMPT='[%*]'
+
+
 #if [[ $TERM == screen]; then
      #function precmd() {
           #print -Pn "\033]0;S $TTY:t{%100<...<%~%<<}\007"
