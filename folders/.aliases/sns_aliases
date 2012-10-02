@@ -2,12 +2,13 @@
 # Variables
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
-#export PATH=${SNS_PATH}/trunk/SnSScripts:$PATH  
+I4M_PATH="/Volumes/Storage/Projects/ios4me"
+export PATH=$PATH:${I4M_PATH}/SnSScripts
 
 alias sns="cd ${SNS_PATH}"
 alias snsf="cd ${SNS_PATH}/../ios4me"
 alias snst="cd ${SNS_PATH}/../ios4me/SnSTemplates"
-alias snsc="cd ${SNS_PATH}/trunk/SnSScripts"
+alias snsc="cd ${I4M_PATH}/SnSScripts"
 alias snsmetro="cd  ${SNS_PATH}/Metro/trunk/Metro-iPad/MetroFrance"
 alias snskel="cd  ${SNS_PATH}/Keldelice/trunk/Keldelice-iPhone"
 alias snsparc="cd ${SNS_PATH}/AnimApp/trunk/ParcAsterix-iphone"
