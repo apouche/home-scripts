@@ -48,3 +48,8 @@ sublime ()
 {
   open -a "Sublime Text 2" $@
 }
+
+mou ()
+{
+  open -a "Mou" $@
+}
