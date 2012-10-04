@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/sh
 
 SCRIPT_PATH="$PWD/`dirname $0`"
 GLOBAL_FILES_NAME="files"
