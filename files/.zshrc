@@ -616,10 +616,10 @@ function set_title_tab
 # call title tab method
 set_title_tab
 
-# _force_rehash() {
-#   (( CURRENT == 1 )) && rehash
-#   return 1  # Because we didn't really complete anything
-# }
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+  return 1  # Because we didn't really complete anything
+}
 
 # edit-command-output() {
 #  BUFFER=$(eval $BUFFER)
