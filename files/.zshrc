@@ -216,12 +216,22 @@ if [[ -d ~/.aliases ]]; then
   done
 fi
 
+# Include dircolors file
+if [ -f ~/.dircolors ]; then
+    . ~/.dircolors
+fi
+
 autoload run-help
 HELPDIR=~/zsh_help
 
 # --------------------------------------
 # Aliases
 # --------------------------------------
+
+#### ls
+if [[ `uname|grep -i "Linux"` != "" ]]; then
+  alias ls='ls --color=auto'
+fi
 
 #### Shell Conveniences
 
