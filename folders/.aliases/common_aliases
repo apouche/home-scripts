@@ -35,7 +35,7 @@ alias open="open -a 'Path Finder'"
 alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 alias pcat='pygmentize -f terminal256 -O style=solarized'
-
+alias preview='find . -name "*.png" |grep -iv "/OLD/" | sed -e "s/ /\\\ /g" |tr "\\n" " "|xargs open -a "Preview"'
 #########################################
 # Functions
 #########################################

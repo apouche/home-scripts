@@ -16,6 +16,7 @@ alias snsnrj="cd ${SNS_PATH}/NrjMobile/trunk/NrjMobileSports-iphone"
 alias snspv="cd ${PRJ_PATH}/ParuVendu"
 alias snsrms="cd /Volumes/Storage/Projects/rms-ipad"
 alias snsnbm="cd ${PRJ_PATH}/NearBuyMe"
+alias snsdk="cd ${PRJ_PATH}/DrKnow"
 
 #########################################
 # Functions

@@ -16,8 +16,8 @@
     dfw = diff --color-words
     gr = grep --full-name -n
     k = !gitk
-    lc = log --pretty=oneline --decorate=full --stat --no-merges ORIG_HEAD..
-	lg = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lc = log --abbrev-commit --pretty=oneline --decorate=full --stat --no-merges ORIG_HEAD..
+	lg = log --abbrev-commit --graph --pretty=format:'%C(cyan)%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' 
 	logp = log --pretty=oneline --decorate=full -20
     post-review = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.software.review@news.intersec.com -C -C -M
     post-review-test = send-email --no-chain-reply-to --suppress-cc all --suppress-from --no-signed-off-by-cc --annotate --compose --to corp.test@news.intersec.com -C -C -M
@@ -31,6 +31,7 @@
     branch = auto
     interactive = auto
     grep = auto
+    log = auto
 [color "status"]
     header = bold blue
     added = bold green
@@ -41,3 +42,4 @@
     frag = magenta bold
     old = red bold
     new = green bold
+    
