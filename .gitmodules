@@ -1,9 +1,3 @@
-[submodule "folders/.vim/bundle/L9"]
-	path = folders/.vim/bundle/L9
-	url = https://github.com/vim-scripts/L9.git
-[submodule "folders/.vim/bundle/ShowMarks"]
-	path = folders/.vim/bundle/ShowMarks
-	url = https://github.com/vim-scripts/ShowMarks.git
 [submodule "folders/.vim/bundle/bufexplorer"]
 	path = folders/.vim/bundle/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
