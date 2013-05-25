@@ -20,7 +20,7 @@ set directory=.,$TEMP
 "endif
 "
 set backspace=indent,eol,start
-"set ruler		" show the cursor position all the time
+set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 map Q gq
@@ -136,9 +136,9 @@ set ic
 
 if has("gui_macvim")
 
-	set columns=171
-	set lines=58
-	winpos 52 42 
+	"set columns=171
+	"set lines=58
+	"winpos 52 42 
 
 	let macvim_skip_cmd_opt_movement = 1
 	let macvim_hig_shift_movement = 1
@@ -263,6 +263,15 @@ endfunction
 
 let mapleader=","
 let g:mapleader=","
+
+"shortcuts from OSX
+map  <A-bs> diW
+nmap <A-Left> b
+imap <A-Left> <Esc>bi
+nmap <A-Right> w
+imap <A-Right> <Esc>Wi
+nmap <C-Space> a
+imap <C-Space> <Esc>
 
 map <silent> <leader>rc :tabe ~/.vim/vimrc<cr>
 map <leader>q :q<cr>
