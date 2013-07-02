@@ -249,6 +249,11 @@ if [[ -x `which tea_chooser` ]]; then
     alias rt='cd /home/frew/bin/run/tea_chooser; ./randtea.rb'
 fi
 
+if [[ -f /usr/local/bin/git ]]; then
+# I need to do this more elegantly...
+    alias git='/usr/local/bin/git'
+fi
+
 # CPAN and sudo don't work together or something
 if [[ -x `which perl` ]]; then
   alias cpan="su root -c 'perl -MCPAN -e \"shell\"'"
