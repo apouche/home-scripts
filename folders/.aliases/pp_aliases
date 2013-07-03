@@ -5,3 +5,4 @@ PP_PATH="/Users/johan/Documents/Projects/preplay"
 
 alias pp="cd ${PP_PATH}"
 alias pp_ios="cd ${PP_PATH}/preplay-ios-apps"
+alias pp_sdk="cd ${PP_PATH}/preplay-ios-sdk"
