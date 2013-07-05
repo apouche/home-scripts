@@ -454,6 +454,10 @@ bindkey -M vicmd '!' edit-command-output
 # it's like, space AND completion.  Gnarlbot.
 bindkey -M viins ' ' magic-space
 
+# move shortcuts
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
 # --------------------------------------
 # History Stuff
 # --------------------------------------
