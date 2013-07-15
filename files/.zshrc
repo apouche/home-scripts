@@ -238,6 +238,7 @@ fi
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias mk=popd
+alias lib='open ~/Library'
 
 #### SSH
 
