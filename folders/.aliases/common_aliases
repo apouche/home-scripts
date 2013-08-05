@@ -46,7 +46,7 @@ unretiner ()
 
 sublime ()
 {
-  open -a "Sublime Text 2" $@
+  open -a "Sublime Text" $@
 }
 
 mou ()
