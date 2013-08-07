@@ -1,11 +1,13 @@
 #########################################
 # Variables
 #########################################
-PP_PATH="/Users/johan/Documents/Projects/preplay"
+PROJECT_PATH="/Users/johan/Documents/Projects"
+PP_PATH="${PROJECT_PATH}/preplay"
 
 alias pp="cd ${PP_PATH}"
 alias pp_ios="cd ${PP_PATH}/preplay-ios-apps"
 alias pp_sdk="cd ${PP_PATH}/preplay-ios-sdk"
 alias pp_api="cd ${PP_PATH}/preplaysports-api"
 
-alias prj="cd ~/Documents/Projects"
+alias prj="cd ${PROJECT_PATH}"
+alias bina="cd ${PROJECT_PATH}/personal/bina"
