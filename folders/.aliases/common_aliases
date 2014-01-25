@@ -20,7 +20,7 @@ alias hs="cd ${HS_PATH}"
 alias prj="cd /Volumes/Storage/Projects"
 alias tmp="cd /Volumes/Storage/Projects/tmp"
 alias prf="cd ~/Library/Preferences"
-alias drp="cd /Volumes/Storage/Dropbox"
+alias drp="cd ~/Applications/Dropboxes/Personal/Dropbox"
 
 alias qt="cd ${PRJ_PATH}/gitorious/"
 alias bina="cd ${PRJ_PATH}/github/bina"
