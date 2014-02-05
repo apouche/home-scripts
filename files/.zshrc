@@ -656,5 +656,3 @@ autoload -Uz compinit promptinit zcalc zsh-mime-setup
 compinit
 promptinit
 zsh-mime-setup
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
