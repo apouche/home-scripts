@@ -6,6 +6,5 @@ set show-line-numbers = no
 set show-id = yes
 
 set line-number-interval = 5
-set commit-encoding = "UTF-8"
 set horizontal-scroll = 33%
 set author-width = 10      
