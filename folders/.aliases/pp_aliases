@@ -8,6 +8,7 @@ alias pp="cd ${PP_PATH}"
 alias pp_ios="cd ${PP_PATH}/preplay-ios-apps"
 alias pp_sdk="cd ${PP_PATH}/preplay-ios-sdk"
 alias pp_tmp="cd ${PP_PATH}/preplay-ios-tmp"
+alias pp_alfred="cd ${PP_PATH}/alfred"
 
 alias pp_api="cd ${PP_PATH}/preplaysports-api"
 alias pp_i18n="cd ${PP_PATH}/preplay-i18n-ios"
