@@ -13,6 +13,7 @@
     ci = commit
     co = checkout
     df = diff
+    cp = cherry-pick
     dfw = diff --color-words
     gr = grep --full-name -n
     k = !gitk
