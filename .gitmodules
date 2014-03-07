@@ -13,3 +13,6 @@
 [submodule "folders/.vim/bundle/L9"]
 	path = folders/.vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
+[submodule "folders/.chisel"]
+	path = folders/.chisel
+	url = https://github.com/facebook/chisel
