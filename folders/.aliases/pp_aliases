@@ -17,3 +17,37 @@ alias prj="cd ${PROJECT_PATH}"
 alias bina="cd ${PROJECT_PATH}/personal/bina"
 
 #alias clang="/Users/johan/Documents/Projects/preplay/preplay-ios-apps/build_scripts/ccache.sh"
+
+# $1: environment, $2: username, $3 tickets quantity
+pp_tickets ()
+{
+  curl -s -X PUT -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/credit/$3|python -mjson.tool|pygmentize -l js
+}
+
+# $1: environment, $2: username, $3 product_id
+pp_put ()
+{
+  curl -s -X PUT -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/$3|python -mjson.tool|pygmentize -l js
+}
+
+# $1: environment, $2: username, $3 product_id
+pp_delete ()
+{
+  curl -s -X DELETE -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/$3|python -mjson.tool|pygmentize -l js
+}
+
+# $1: environment, $2: username, $3 division_number (ex prospect:1, rookie:2 ...)
+pp_put_division ()
+{
+  pp_put $1 $2 agent_$3
+  pp_put $1 $2 trainer_$3
+  pp_put $1 $2 coach_$3
+}
+
+# $1: environment, $2: username, $3 division_number (ex prospect:1, rookie:2 ...)
+pp_delete_division ()
+{
+  pp_put $1 $2 agent_$3
+  pp_put $1 $2 trainer_$3
+  pp_put $1 $2 coach_$3
+}
