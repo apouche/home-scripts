@@ -18,6 +18,12 @@ alias bina="cd ${PROJECT_PATH}/personal/bina"
 
 #alias clang="/Users/johan/Documents/Projects/preplay/preplay-ios-apps/build_scripts/ccache.sh"
 
+# $1: environment, $2: username
+pp_user ()
+{
+  curl -s -X GET http://$1.mlb.api.preplaysports.com/users/$2.json|python -mjson.tool|pygmentize -l js
+}
+
 # $1: environment, $2: username, $3 tickets quantity
 pp_tickets ()
 {
