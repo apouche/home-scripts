@@ -8,6 +8,9 @@
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
+		update = pull origin
+		up = update
+		po = push origin
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     br = branch
     ci = commit
@@ -44,14 +47,14 @@
     frag = magenta bold
     old = red bold
     new = green bold
-    
+
 [mergetool]
 	keepBackup = true
 [core]
-	excludesfile = 
+	excludesfile =
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
