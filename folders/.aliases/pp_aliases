@@ -24,6 +24,12 @@ pp_user ()
   curl -s -X GET http://$1.mlb.api.preplaysports.com/users/$2.json|python -mjson.tool|pygmentize -l js
 }
 
+# $1: environment, $2: username
+pp_inventory ()
+{
+  curl -s -X DELETE -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/no_coach|python -mjson.tool|pygmentize -l js
+}
+
 # $1: environment, $2: username, $3 tickets quantity
 pp_tickets ()
 {
