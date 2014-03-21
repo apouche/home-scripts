@@ -59,7 +59,7 @@ pp_put_division ()
 # $1: environment, $2: username, $3 division_number (ex prospect:1, rookie:2 ...)
 pp_delete_division ()
 {
-  pp_put $1 $2 agent_$3
-  pp_put $1 $2 trainer_$3
-  pp_put $1 $2 coach_$3
+  pp_delete $1 $2 agent_$3
+  pp_delete $1 $2 trainer_$3
+  pp_delete $1 $2 coach_$3
 }
