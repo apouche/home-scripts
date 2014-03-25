@@ -50,6 +50,11 @@ sublime ()
   open -a "Sublime Text" $@
 }
 
+atom ()
+{
+  open -a "Atom" $@
+}
+
 mou ()
 {
   open -a "Mou" $@
