@@ -5,4 +5,4 @@ set main-view = \
   commit-title
 
 bind generic F !git fetch
-bind generic Y !@csh -c "echo -n %(commit) | pbcopy"
+bind generic Y !@csh -c "echo -n %(commit) | cut -c 1-7 | pbcopy"
