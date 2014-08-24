@@ -1,10 +1,8 @@
-set show-author = abbreviated
-set show-date = local
-set show-rev-graph = yes
-set show-refs = yes
-set show-line-numbers = no
-set show-id = yes
+set main-view = \
+  id:true \
+  author:abbreviated \
+  date:default \
+  commit-title
 
-set line-number-interval = 5
-set horizontal-scroll = 33%
-set author-width = 10      
+bind generic F !git fetch
+bind generic Y !@csh -c "echo -n %(commit) | pbcopy"
