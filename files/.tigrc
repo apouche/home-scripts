@@ -1,8 +1,9 @@
 set main-view = \
   id:true \
+  line-number:no,interval=5\
   author:abbreviated \
   date:default \
-  commit-title
+  commit-title:yes,graph,refs,overflow=no
 
 bind generic F !git fetch
-bind generic Y !@csh -c "echo -n %(commit) | cut -c 1-7 | pbcopy"
+bind generic Y !@csh -c "echo %(commit) | cut -c 1-7 | pbcopy"
