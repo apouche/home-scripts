@@ -27,7 +27,7 @@ pp_user ()
 # $1: environment, $2: username
 pp_inventory ()
 {
-  curl -s -X DELETE -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/no_coach|python -mjson.tool|pygmentize -l js
+  curl -s -X PUT -H "X-Activity:MLB" http://$1.boutique.preplaysports.com/admin/inventories/$2/credit/0|python -mjson.tool|pygmentize -l js
 }
 
 # $1: environment, $2: username, $3 tickets quantity
