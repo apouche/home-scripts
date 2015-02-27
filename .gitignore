@@ -1,3 +1,6 @@
-#Ignore log files
+# Mac
+.DS_Store
+
+# logs
 *.log
 *.swp
