@@ -61,7 +61,7 @@ sublime ()
 
 atom ()
 {
-  open -a "Atom 2" $@
+  open -a "Atom" $@
 }
 
 mou ()
