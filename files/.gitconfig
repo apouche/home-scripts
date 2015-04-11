@@ -1,8 +1,8 @@
 [user]
 	email = johan.attali@gmail.com
-	name = Johan Attali
+	name = apouche
 [github]
-	user = Johan Attali
+	user = apouche
 	token = ---
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"

@@ -102,9 +102,9 @@ if has("gui_running") || has("gui_macvim")
     hi ShowMarksHLm gui=bold guifg=#a0a0e0 guibg=NONE 
     hi SignColumn   gui=bold guifg=#f0f0f8 guibg=#073642 
 else
-	"colorscheme slate
-	set background=dark
-	colorscheme solarized
+	colorscheme slate
+	"set background=dark
+	"colorscheme solarized
 endif
 
 if MySys() == "mac"

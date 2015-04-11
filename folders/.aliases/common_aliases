@@ -1,8 +1,9 @@
 #########################################
 # Variables
 #########################################
-PRJ_PATH="/Volumes/Storage/Projects"
+PRJ_PATH="${HOME}/Documents/Projects"
 HS_PATH="${HOME}/.home-scripts"
+export TEAMCITY_DATA_PATH="${PRJ_PATH}/teamcity/data"
 
 #########################################
 # Shell Setup
@@ -27,6 +28,11 @@ alias drp="cd ~/Applications/Dropboxes/Personal/Dropbox"
 
 alias qt="cd ${PRJ_PATH}/gitorious/"
 alias bina="cd ${PRJ_PATH}/github/bina"
+alias tc="cd ${PRJ_PATH}/teamcity"
+
+# Celeste
+alias cel_ios="cd ${PRJ_PATH}/freelance/celeste-ios"
+alias cel_mean="cd ${PRJ_PATH}/freelance/celeste-mean"
 
 #Network
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
