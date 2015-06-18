@@ -1,0 +1,5 @@
+PROJECT_PATH="/Users/johan/Documents/Projects"
+CJ_PATH="${PROJECT_PATH}/captain-jet"
+
+alias cj="cd ${CJ_PATH}"
+alias cj_ios="cd ${CJ_PATH}/captain-jet-ios"
