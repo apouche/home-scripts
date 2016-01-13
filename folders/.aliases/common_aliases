@@ -50,6 +50,11 @@ alias preview='find . -name "*.png" |grep -iv "/OLD/" | sed -e "s/ /\\\ /g" |tr 
 #########################################
 # Functions
 #########################################
+
+function brew.info {
+  grep desc $(brew --prefix)/Library/Formula/*.rb | perl -ne 'm{^.*/(.*?)\.rb.*?\"(.*)"$} and print "$1|$2\n"' | column -t -s '|' | fzf --reverse
+}
+
 unretiner ()
 {
   find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
