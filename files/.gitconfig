@@ -7,10 +7,9 @@
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-
-		update = pull origin
-		up = update
-		po = push origin
+    update = pull origin
+	up = update
+	po = push origin
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     br = branch
     ci = commit
