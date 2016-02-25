@@ -47,12 +47,17 @@ alias cdp='cd "`pbpaste`"'
 alias pwdp='pwd|pbcopy'
 alias pcat='pygmentize -f terminal256 -O style=solarizeddark'
 alias preview='find . -name "*.png" |grep -iv "/OLD/" | sed -e "s/ /\\\ /g" |tr "\\n" " "|xargs open -a "Preview"'
+
 #########################################
 # Functions
 #########################################
 
 function brew.info {
   grep desc $(brew --prefix)/Library/Formula/*.rb | perl -ne 'm{^.*/(.*?)\.rb.*?\"(.*)"$} and print "$1|$2\n"' | column -t -s '|' | fzf --reverse
+}
+
+function weather {
+  curl http://wttr.in/$1
 }
 
 unretiner ()
