@@ -205,6 +205,11 @@ if [[ -x `which most` ]]; then
   export PAGER=most
 fi
 
+# RVM
+if [[ -x `rvm` ]]; then
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
+
 # --------------------------------------
 # External Files
 # --------------------------------------
