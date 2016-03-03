@@ -206,7 +206,7 @@ if [[ -x `which most` ]]; then
 fi
 
 # RVM
-if [[ -x `rvm` ]]; then
+if [[ -x `which rvm` ]]; then
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
