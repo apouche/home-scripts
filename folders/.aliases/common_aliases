@@ -2,7 +2,6 @@
 # Variables
 #########################################
 PRJ_PATH="${HOME}/Documents/Projects"
-HS_PATH="${HOME}/.home-scripts"
 export TEAMCITY_DATA_PATH="${PRJ_PATH}/teamcity/data"
 
 #########################################
@@ -20,9 +19,8 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 alias grep="grep -i --color"
 
 #Shortcuts
-alias hs="cd ${HS_PATH}"
-alias prj="cd /Volumes/Storage/Projects"
-alias tmp="cd /Volumes/Storage/Projects/tmp"
+alias prj="cd ${PRJ_PATH}"
+alias tmp="cd ${PRJ_PATH}/tmp"
 alias prf="cd ~/Library/Preferences"
 alias drp="cd ~/Applications/Dropboxes/Personal/Dropbox"
 alias dot="cd ~/.dotfiles"
@@ -31,12 +29,8 @@ alias qt="cd ${PRJ_PATH}/gitorious/"
 alias bina="cd ${PRJ_PATH}/github/bina"
 alias tc="cd ${PRJ_PATH}/teamcity"
 
-# Celeste
-alias cel_ios="cd ${PRJ_PATH}/freelance/celeste-ios"
-alias cel_mean="cd ${PRJ_PATH}/freelance/celeste-mean"
-
 #Network
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias ips="ifconfig -a|grep -oE \"inet [^ ]+\"|grep -oE \"[0-9\.]+\""
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias myips="myip;ips"
 
@@ -60,27 +54,22 @@ function weather {
   curl http://wttr.in/$1
 }
 
-unretiner ()
-{
-  find $* -maxdepth 1 -name "*@2x.png"|grep -oP "^[^@]*"|xargs -I {} convert "{}@2x.png" -resize 50% -alpha off "{}.png"
-}
-
-sublime ()
-{
+function sublime () {
   open -a "Sublime Text" $@
 }
 
-atom ()
-{
+function atom () {
   open -a "Atom" $@
 }
 
-code ()
-{
+function atomb () {
+  open -a "Atom Beta" $@
+}
+
+function code () {
   open -a "Visual Studio Code" $@
 }
 
-mou ()
-{
+function mou () {
   open -a "Mou" $@
 }
