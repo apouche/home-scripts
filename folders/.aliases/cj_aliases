@@ -3,3 +3,5 @@ CJ_PATH="${PROJECT_PATH}/captain-jet"
 
 alias cj="cd ${CJ_PATH}"
 alias cj-ios="cd ${CJ_PATH}/captain-jet-ios"
+alias cj-android="cd ${CJ_PATH}/captain-jet-android"
+alias cj-api="cd ${CJ_PATH}/captain-jet-api"
