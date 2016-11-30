@@ -43,6 +43,9 @@ alias pwdp='pwd|pbcopy'
 alias pcat='pygmentize -f terminal256 -O style=solarizeddark'
 alias preview='find . -name "*.png" |grep -iv "/OLD/" | sed -e "s/ /\\\ /g" |tr "\\n" " "|xargs open -a "Preview"'
 
+# Android
+alias adb="${HOME}/Library/Android/sdk/platform-tools/adb"
+
 #########################################
 # Functions
 #########################################
@@ -53,6 +56,10 @@ function brew.info {
 
 function weather {
   curl http://wttr.in/$1
+}
+
+function realm {
+  open -a "Realm Browser" $@
 }
 
 function sublime () {
