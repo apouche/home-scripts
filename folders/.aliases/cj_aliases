@@ -5,3 +5,23 @@ alias cj="cd ${CJ_PATH}"
 alias cj-ios="cd ${CJ_PATH}/captain-jet-ios"
 alias cj-android="cd ${CJ_PATH}/captain-jet-android"
 alias cj-api="cd ${CJ_PATH}/captain-jet-api"
+
+function android.mipmap () {
+	find . -type f -maxdepth 1 \
+		| grep -oE "\w+dpi" \
+		| xargs -I {} mkdir -pv "mipmap-{}"
+
+	find . -type d -maxdepth 1 \
+		| grep -oE "\w+dpi" \
+		| xargs -I dpi find . -type f -name "*-dpi.png" -exec cp {} "mipmap-"dpi \;
+
+	find . -type f -mindepth 2 -maxdepth 2 -name "*dpi.png" \
+		| xargs -I {} rename 's/-\w+dpi.png/.png/' {}
+
+	find . -type f -maxdepth 1 -name "*dpi.png" \
+		| xargs -I {} rm {}
+
+	rsync -avd ~/Desktop/res $1
+}
+
+
