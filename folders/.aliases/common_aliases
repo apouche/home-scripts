@@ -30,9 +30,10 @@ alias bina="cd ${PRJ_PATH}/github/bina"
 alias tc="cd ${PRJ_PATH}/teamcity"
 
 #Network
-alias ips="ifconfig -a|grep -oE \"inet [^ ]+\"|grep -oE \"[0-9\.]+\""
-alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias myips="myip;ips"
+alias myipsloc="ifconfig -a|grep -oE \"inet [^ ]+\"|grep -oE \"[0-9\.]+\"|grep -vE \"^127\""
+alias myipsext="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myips="myipsext;myipsloc"
+alias myip="myipsloc|grep -E -m 1 -v \"^127\""
 
 # Commands
 alias smc="/Applications/smcFanControl.app/Contents/Resources/smc -k F0Mx -w 1700"
