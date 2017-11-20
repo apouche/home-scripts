@@ -22,7 +22,7 @@ alias grep="grep -i --color"
 alias prj="cd ${PRJ_PATH}"
 alias tmp="cd ${PRJ_PATH}/tmp"
 alias prf="cd ~/Library/Preferences"
-alias drp="cd ~/Applications/Dropboxes/Personal/Dropbox"
+alias drp="cd ~/Dropboxes/Personal/Dropbox"
 alias dot="cd ~/.dotfiles"
 
 alias qt="cd ${PRJ_PATH}/gitorious/"
