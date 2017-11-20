@@ -6,12 +6,21 @@ alias cj-ios="cd ${CJ_PATH}/captain-jet-ios"
 alias cj-android="cd ${CJ_PATH}/captain-jet-android"
 alias cj-api="cd ${CJ_PATH}/captain-jet-api"
 
+alias dex-method-counts="${PROJECT_PATH}/github/dex-method-counts/dex-method-counts"
+
 function android.mipmap () {
 	find . -type d -maxdepth 1 \
 		| grep -oE "\w+dpi" \
 		| xargs -I {} mv "{}" "mipmap-{}"
-		
+
 	rsync -avd ./ $1
 }
 
+function android.drawable () {
+	find . -type d -maxdepth 1 \
+		| grep -oE "\w+dpi" \
+		| xargs -I {} mv "{}" "drawable-{}"
+		
+	rsync -avd ./ $1
+}
 
