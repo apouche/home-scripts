@@ -26,3 +26,11 @@ function android.drawable () {
 	rsync -avd ./ $1
 }
 
+function cj.deobfuscate() {
+    if (( $# == 0 ))
+    then echo "usage: cjid obfuscated_id"; return 1; fi
+
+    ID=`ssh cj.prod.api-1 -t "cd api.captainjet.com && php artisan tinker <<< \"Id::deobfuscate('$1')\"" 2>&1 >/dev/null | sed -E "s/"$'\E'"\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g" | grep "=>" | tr -dc '0-9'`
+    echo "$1 => $ID"
+    echo -n $ID | pbcopy
+}
