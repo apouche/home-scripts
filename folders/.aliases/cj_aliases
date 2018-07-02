@@ -5,6 +5,8 @@ alias cj="cd ${CJ_PATH}"
 alias cj-ios="cd ${CJ_PATH}/captain-jet-ios"
 alias cj-android="cd ${CJ_PATH}/captain-jet-android"
 alias cj-api="cd ${CJ_PATH}/captain-jet-api"
+alias cj.st='ssh cj.staging -t "cd staging.captainjet.com && php artisan tinker"'
+alias cj.pt='ssh cj.prod.api-1 -t "cd api.captainjet.com && php artisan tinker"'
 
 alias dex-method-counts="${PROJECT_PATH}/github/dex-method-counts/dex-method-counts"
 
