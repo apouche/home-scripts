@@ -475,11 +475,11 @@ bindkey '^[[1;5D' backward-word
 # --------------------------------------
 
 # Where it gets saved
-HISTFILE=~/.history
+HISTFILE=$HOME/Dropbox/Soft/zsh/history
 
-# Remember about a years worth of history (AWESOME)
-SAVEHIST=20000
-HISTSIZE=20000
+# Remember about 10 years worth of history (AWESOME)
+SAVEHIST=200000
+HISTSIZE=200000
 
 # Don't overwrite, append!
 setopt APPEND_HISTORY
