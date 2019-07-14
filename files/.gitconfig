@@ -1,8 +1,8 @@
 [user]
 	email = johan.attali@gmail.com
-	name = apouche
+	name = JohanA
 [github]
-	user = apouche
+	user = JohanA
 	token = ---
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
@@ -58,3 +58,8 @@
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

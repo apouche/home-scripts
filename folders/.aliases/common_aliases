@@ -45,6 +45,7 @@ alias preview='find . -name "*.png" |grep -iv "/OLD/" | sed -e "s/ /\\\ /g" |tr 
 
 # Android
 alias adb="${HOME}/Library/Android/sdk/platform-tools/adb"
+alias emulator="${HOME}/Library/Android/sdk/emulator/emulator"
 
 #########################################
 # Functions
