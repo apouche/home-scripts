@@ -2,7 +2,7 @@
 # Variables
 #########################################
 PRJ_PATH="${HOME}/Documents/Projects"
-export TEAMCITY_DATA_PATH="${PRJ_PATH}/teamcity/data"
+export TEAMCITY_DATA_PATH="/Applications/TeamCity/Data"
 
 #########################################
 # Shell Setup
@@ -27,7 +27,7 @@ alias dot="cd ~/.dotfiles"
 
 alias qt="cd ${PRJ_PATH}/gitorious/"
 alias bina="cd ${PRJ_PATH}/github/bina"
-alias tc="cd ${PRJ_PATH}/teamcity"
+alias tc="cd -P /Applications/TeamCity/latest"
 
 #Network
 alias myipsloc="ifconfig -a|grep -oE \"inet [^ ]+\"|grep -oE \"[0-9\.]+\"|grep -vE \"^127\""
