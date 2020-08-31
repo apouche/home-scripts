@@ -208,6 +208,7 @@ fi
 # RVM
 if [[ -x `which rvm` ]]; then
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+  export GEM_HOME=$HOME/.gem
 fi
 
 # --------------------------------------
