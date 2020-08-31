@@ -205,6 +205,10 @@ if [[ -x `which most` ]]; then
   export PAGER=most
 fi
 
+if [[ -x `which gpg` ]]; then
+  export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls
+fi
+
 # RVM
 if [[ -x `which rvm` ]]; then
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
