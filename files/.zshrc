@@ -250,6 +250,15 @@ alias ez='vim ~/.zshrc'
 alias mk=popd
 alias lib='open ~/Library'
 
+#### Homebrew
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 #### SSH
 
 
