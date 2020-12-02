@@ -209,7 +209,16 @@ if [[ -x `which gpg` ]]; then
   export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls
 fi
 
+# Rust
+if [ -d "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+fi
+
 # RVM
+if [ -f "${HOME}/.rvm/scripts/rvm" ]; then
+  source "${HOME}/.rvm/scripts/rvm"
+fi
+
 if [[ -x `which rvm` ]]; then
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
   export GEM_HOME=$HOME/.gem
