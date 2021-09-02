@@ -312,6 +312,11 @@ if [[ -x `which fri` ]]; then
   alias ri=fri
 fi
 
+# flutter
+if [[ -x "${HOME}/Library/Flutter/latest" ]]; then
+  export PATH="$PATH:${HOME}/Library/Flutter/latest/bin"
+fi
+
 # This is how you can see all of my passwords.
 alias auth='view ~/.auth.des3'
 
