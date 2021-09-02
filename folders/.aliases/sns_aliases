@@ -3,7 +3,7 @@
 #########################################
 SNS_PATH="/Volumes/Storage/Projects/Smart\&Soft"
 I4M_PATH="/Volumes/Storage/Projects/ios4me"
-export PATH=$PATH:${I4M_PATH}/SnSScripts
+#export PATH=$PATH:${I4M_PATH}/SnSScripts
 
 alias sns="cd ${SNS_PATH}"
 alias snsf="cd ${SNS_PATH}/../ios4me"
