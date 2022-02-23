@@ -2,9 +2,9 @@ PROJECT_PATH="/Users/johan/Documents/Projects"
 CJ_PATH="${PROJECT_PATH}/captain-jet"
 
 alias cj="cd ${CJ_PATH}"
-alias cj-ios="cd ${CJ_PATH}/captain-jet-ios"
 alias cj-android="cd ${CJ_PATH}/captain-jet-android"
 alias cj-api="cd ${CJ_PATH}/captain-jet-api"
+alias jf.ios="cd ${PROJECT_PATH}/jetfly/jetfly-ios"
 alias cj.st='ssh cj.staging -t "cd staging.captainjet.com && php artisan tinker"'
 alias cj.pt='ssh cj.prod.api-1 -t "cd api.captainjet.com && php artisan tinker"'
 
