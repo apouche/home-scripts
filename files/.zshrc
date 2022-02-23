@@ -261,6 +261,10 @@ alias lib='open ~/Library'
 
 #### Homebrew
 
+if [[ -x "/opt/homebrew/bin/" ]]; then
+  export PATH="$PATH:/opt/homebrew/bin/"
+fi
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 

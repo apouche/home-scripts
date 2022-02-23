@@ -37,5 +37,10 @@ done
 ## Copying to /usr/local/bin
 #########################################
 
-cp ${BIN_FILES} /usr/local/bin/
+
+if [[ -x "/opt/homebrew/bin/" ]]; then
+	cp ${BIN_FILES} /opt/homebrew/bin/
+elif [[ -x "/usr/local/bin" ]]; then
+	cp ${BIN_FILES} /usr/local/bin
+fi
 
