@@ -223,6 +223,13 @@ fi
 if [ -d "${HOME}/.npm-global/bin" ]; then
   export PATH="$PATH:$HOME/.npm-global/bin"
 fi
+
+# VOLTA
+if [ -d "${HOME}/.volta" ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 # RVM
 if [ -f "${HOME}/.rvm/scripts/rvm" ]; then
   source "${HOME}/.rvm/scripts/rvm"
