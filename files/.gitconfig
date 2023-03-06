@@ -1,8 +1,8 @@
 [user]
 	email = johan@devmob.io
-	name = JohanA
+	name = JAttali
 [github]
-	user = JohanA
+	user = JAttali
 	token = ---
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
@@ -63,3 +63,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = false
+[gpg]
+	program = /usr/local/bin/gpg
