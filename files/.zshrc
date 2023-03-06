@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Autoload screen if we aren't in it.  (Thanks Fjord!)
 #if [[ $STY = '' ]] then screen -xR; fi
 
@@ -721,3 +723,7 @@ autoload -Uz compinit promptinit zcalc zsh-mime-setup
 compinit
 promptinit
 zsh-mime-setup
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
