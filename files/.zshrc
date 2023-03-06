@@ -214,6 +214,10 @@ if [ -d "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
 
+# Composer
+if [ -d "${HOME}/.composer/vendor/bin" ]; then
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
+fi
 # RVM
 if [ -f "${HOME}/.rvm/scripts/rvm" ]; then
   source "${HOME}/.rvm/scripts/rvm"
