@@ -218,6 +218,11 @@ fi
 if [ -d "${HOME}/.composer/vendor/bin" ]; then
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 fi
+
+# RPM
+if [ -d "${HOME}/.npm-global/bin" ]; then
+  export PATH="$PATH:$HOME/.npm-global/bin"
+fi
 # RVM
 if [ -f "${HOME}/.rvm/scripts/rvm" ]; then
   source "${HOME}/.rvm/scripts/rvm"
