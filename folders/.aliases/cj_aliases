@@ -5,7 +5,10 @@ alias cj="cd ${CJ_PATH}"
 alias cj-android="cd ${CJ_PATH}/captain-jet-android"
 alias cj-api="cd ${CJ_PATH}/captain-jet-api"
 alias jf.ios="cd ${PROJECT_PATH}/jetfly/jetfly-ios"
-alias cj.st='ssh cj.staging -t "cd staging.captainjet.com && php artisan tinker"'
+alias jf.api="cd ${PROJECT_PATH}/jetfly/jetfly-api"
+alias jf.android="cd ${PROJECT_PATH}/jetfly/jetfly-android"
+alias jf.mlp="cd ${PROJECT_PATH}/jetfly/mylittleplane"
+alias cj.st='ssh cj.staging -t "cd api-staging.captainjet.com/ && php artisan tinker"'
 alias cj.pt='ssh cj.prod.api-1 -t "cd api.captainjet.com && php artisan tinker"'
 
 alias dex-method-counts="${PROJECT_PATH}/github/dex-method-counts/dex-method-counts"
