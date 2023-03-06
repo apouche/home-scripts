@@ -288,6 +288,12 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+### Android
+
+if [[ -x "$HOME/Library/Android/sdk/platform-tools" ]]; then
+  export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+fi
+
 #### SSH
 
 
